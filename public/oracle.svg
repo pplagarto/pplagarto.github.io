@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 422" role="img" aria-labelledby="title desc">
+  <title id="title">Oracle</title>
+  <desc id="desc">Oracle wordmark used for the portfolio experience section.</desc>
+  <rect width="750" height="422" rx="18" fill="#ffffff"/>
+  <rect x="1" y="1" width="748" height="420" rx="18" fill="none" stroke="#e5e7eb" stroke-width="2"/>
+  <text x="375" y="238" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="96" font-weight="700" letter-spacing="4" fill="#c74634">ORACLE</text>
+</svg>

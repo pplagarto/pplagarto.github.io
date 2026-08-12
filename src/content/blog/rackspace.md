@@ -6,7 +6,7 @@ heroImage: "/rx2.png"
 tags: ["IoT","Cloud","AWS","DNS","Windows and Linux","GCP","Azure","SSL"]
 ---
 
-In this role, I am responsible for a wide range of tasks within the cloud domain as the first line of response to customers. Many issues can be resolved quickly with a few questions, such as DNS record configurations and basic troubleshooting for servers, whether they are dedicated (private) or public cloud servers hosted on Rackspace.
+In this role, I was responsible for a wide range of tasks within the cloud domain as the first line of response to customers. Many issues could be resolved quickly with a few questions, such as DNS record configurations and basic troubleshooting for servers, whether they were dedicated (private) or public cloud servers hosted on Rackspace.
 
 Additionally, I must be familiar with all services provided by AWS, GCP, and Azure to identify whether a problem is related to infrastructure or the operating system. In cases related to the operating system, I check the status of the server's virtual components (RAM, CPU usage, Memory Usage, Inodes, PowerStatus, outdated programs, etc.). Based on this assessment, I determine whether I can resolve the issue quickly or if it is more effective to route the case to an identified specialist or engineer.
 
