@@ -4,71 +4,93 @@ import TimeLineElement from "../components/cv/TimeLine.astro";
 ---
 
 <BaseLayout title="Resume" sideBarActiveItemID="cv">
-  
   <div class="flex justify-evenly">
     <div class="mb-5">
-      <div class="text-3xl w-full font-bold">About Me</div>
+      <div class="text-3xl w-full font-bold" data-i18n="timeline">Experience Timeline</div>
     </div>
     <a class="btn" href="/CV_JGLG_JULIO_2024_ENG3.pdf" download="CV_JGLG_JULIO_2024_ENG3.pdf">
-      <button class="">
-            Download CV
-      </button>    
-    </a>    
-  </div> 
+      <button>
+        <span data-i18n="downloadResume">Download Resume</span>
+      </button>
+    </a>
+  </div>
 
   <div class="mb-10 text-justify">
-    I have strong emotional intelligence and strategic and empathetic leadership abilities. I am capable of maintaining a positive and calm attitude during challenging situations, allowing me to analyze the situation accurately without becoming stressed. I am always seeking to acquire new knowledge and reinforce the skills I have already obtained.
+    <p data-lang-panel="en">
+      I have strong emotional intelligence and strategic, empathetic leadership abilities. I can maintain a positive and calm attitude during challenging situations, which helps me analyze problems accurately without losing focus. I am always seeking to acquire new knowledge and reinforce the skills I have already built.
+    </p>
+    <p data-lang-panel="es" hidden>
+      Cuento con inteligencia emocional sólida y habilidades de liderazgo estratégico y empático. Puedo mantener una actitud positiva y calmada durante situaciones retadoras, lo que me ayuda a analizar problemas con precisión sin perder el enfoque. Siempre busco adquirir nuevo conocimiento y reforzar las habilidades que ya he construido.
+    </p>
   </div>
 
   <div class="mb-5">
-    <div class="text-3xl w-full font-bold">Education</div>
+    <div class="text-3xl w-full font-bold" data-text-en="Education" data-text-es="Educación">Education</div>
   </div>
 
   <div class="time-line-container grid gap-4 mb-10">
-    <TimeLineElement title="CONTROL AND AUTOMATION ENGINEER"  subtitle="2015 to 2019 at Instituto Politecnico Nacional, ESIME Zacatenco, CDMX, México">
-        <div>
-        <p class="font-normal">During my degree, I gained knowledge in industrial instrumentation, 
-        with a specialization in digital control. I simulated with mathematical models, focusing on the following engineering fields:</p>
-        <p class="py-2">•	Control, instrumentation, and communication of process sensors, actuators, and controllers of the top brands E&H, Emerson, ABB, Allied Telesis.</p>
-        <p class="py-2">•	Understanding current standard processes and their safety measures based on process nature of standard regulations on intrinsically Safe protections, Nema, Ip, API processes, ISO, ISA..</p>
-        <p class="py-2">•	Interpretation and creation of technical drawings, engineering documents, electrical diagrams, and control diagrams such as P&ID.</p>
-        <p class="py-2">•	Programming and connection using industrial protocols for Allen-Bradley systems, using programs such as RSlogix and TiaPortal, for various modular equipment and frequency drives (Ethernet IP, Control-Net, Device-Net)</p>
-        </div>
+    <TimeLineElement
+      title="CONTROL AND AUTOMATION ENGINEER"
+      titleEs="INGENIERO EN CONTROL Y AUTOMATIZACIÓN"
+      subtitle="2015 to 2019 at Instituto Politecnico Nacional, ESIME Zacatenco, CDMX, Mexico"
+      subtitleEs="2015 a 2019 en Instituto Politécnico Nacional, ESIME Zacatenco, CDMX, México"
+    >
+      <div data-lang-panel="en">
+        <p class="font-normal">During my degree, I gained knowledge in industrial instrumentation with a specialization in digital control. I simulated mathematical models and focused on these engineering areas:</p>
+        <p class="py-2">• Control, instrumentation, and communication for process sensors, actuators, and controllers from brands such as E&H, Emerson, ABB, and Allied Telesis.</p>
+        <p class="py-2">• Understanding of industrial processes and safety measures related to intrinsic safety, NEMA, IP, API, ISO, and ISA standards.</p>
+        <p class="py-2">• Interpretation and creation of technical drawings, engineering documents, electrical diagrams, control diagrams, and P&ID documentation.</p>
+        <p class="py-2">• Programming and connection using industrial protocols for Allen-Bradley systems, RSLogix, and TIA Portal, including modular equipment and frequency drives.</p>
+      </div>
+      <div data-lang-panel="es" hidden>
+        <p class="font-normal">Durante la carrera obtuve conocimientos en instrumentación industrial con especialización en control digital. Trabajé con simulación de modelos matemáticos y enfoqué mi aprendizaje en estas áreas de ingeniería:</p>
+        <p class="py-2">• Control, instrumentación y comunicación de sensores de proceso, actuadores y controladores de marcas como E&H, Emerson, ABB y Allied Telesis.</p>
+        <p class="py-2">• Comprensión de procesos industriales y medidas de seguridad relacionadas con seguridad intrínseca, normas NEMA, IP, API, ISO e ISA.</p>
+        <p class="py-2">• Interpretación y creación de planos técnicos, documentos de ingeniería, diagramas eléctricos, diagramas de control y documentación P&ID.</p>
+        <p class="py-2">• Programación y conexión con protocolos industriales para sistemas Allen-Bradley, RSLogix y TIA Portal, incluyendo equipos modulares y variadores de frecuencia.</p>
+      </div>
     </TimeLineElement>
 
-    <TimeLineElement title="MACHINE AND TOOLS TECHNICIAN" subtitle="2012 to 2015 at CECyT 9 Juan de Dios Batiz Paredez, CDMX, Mexico">
-      <div>
-        <p class="font-normal">During my time in this technical career, I have learned to:</p>
-        <p class="py-2">•	Operate Machinery: Lathes
-                          Milling machines
-                          Sanders
-                          CNC machines, including programming in FANUC</p>
-        <p class="py-2">•	Study Material Hardness: Analyze the hardness of materials and their applicability in various contexts</p>
-        <p class="py-2">•	Design Mechanical Parts: Design mechanical parts and ensure their correct use.</p>
-        <p class="py-2">•	Conduct Electrical Power Simulations: Perform electrical power simulations to ensure system efficiency and reliability</p>
-        </div>
+    <TimeLineElement
+      title="MACHINE AND TOOLS TECHNICIAN"
+      titleEs="TÉCNICO EN MÁQUINAS Y HERRAMIENTAS"
+      subtitle="2012 to 2015 at CECyT 9 Juan de Dios Batiz Paredez, CDMX, Mexico"
+      subtitleEs="2012 a 2015 en CECyT 9 Juan de Dios Bátiz Paredes, CDMX, México"
+    >
+      <div data-lang-panel="en">
+        <p class="font-normal">During this technical program, I learned to operate lathes, milling machines, sanders, and CNC machines, including FANUC programming.</p>
+        <p class="py-2">• Analyze material hardness and understand its practical applications.</p>
+        <p class="py-2">• Design mechanical parts and evaluate their correct use.</p>
+        <p class="py-2">• Perform electrical power simulations to improve system efficiency and reliability.</p>
+      </div>
+      <div data-lang-panel="es" hidden>
+        <p class="font-normal">Durante esta carrera técnica aprendí a operar tornos, fresadoras, lijadoras y máquinas CNC, incluyendo programación FANUC.</p>
+        <p class="py-2">• Analizar dureza de materiales y comprender sus aplicaciones prácticas.</p>
+        <p class="py-2">• Diseñar piezas mecánicas y evaluar su uso correcto.</p>
+        <p class="py-2">• Realizar simulaciones de potencia eléctrica para mejorar eficiencia y confiabilidad de sistemas.</p>
+      </div>
     </TimeLineElement>
   </div>
 
-
   <div class="mb-5">
-    <div class="text-3xl w-full font-bold">Experience</div>
+    <div class="text-3xl w-full font-bold" data-text-en="Experience" data-text-es="Experiencia">Experience</div>
   </div>
 
   <div class="time-line-container mb-10">
     <TimeLineElement
-          title="Oracle - Cloud Support Engineer, OCI Networking"
-          subtitle="From December 2024 to present"
-      >
+      title="Oracle - Cloud Support Engineer, OCI Networking"
+      titleEs="Oracle - Cloud Support Engineer, Networking en OCI"
+      subtitle="From December 2024 to present"
+      subtitleEs="De diciembre de 2024 a la fecha"
+    >
       <div class="flex flex-wrap gap-4">
         <img src="/oracle.svg" alt="Oracle logo" class="w-48 rounded-lg border border-base-300 bg-white p-4" />
         <div class="grow min-w-[16rem]">
-          <p>
-            Cloud Support Engineer specialized in OCI Networking, focused on diagnosing and resolving complex connectivity, routing, VPN, FastConnect, load balancing, DNS, and network security issues. I work with enterprise customers, logs, metrics, packet captures, TCP/IP troubleshooting, and cross-functional escalations with engineering teams.
-          </p>
+          <p data-lang-panel="en">Cloud Support Engineer specialized in OCI Networking, focused on diagnosing and resolving complex connectivity, routing, VPN, FastConnect, load balancing, DNS, and network security issues. I work with enterprise customers, logs, metrics, packet captures, TCP/IP troubleshooting, and cross-functional escalations with engineering teams.</p>
+          <p data-lang-panel="es" hidden>Cloud Support Engineer especializado en OCI Networking, enfocado en diagnosticar y resolver incidentes complejos de conectividad, routing, VPN, FastConnect, load balancing, DNS y seguridad de red. Trabajo con clientes empresariales, logs, métricas, packet captures, troubleshooting TCP/IP y escalaciones con equipos de ingeniería.</p>
           <a href="/blog/oracle">
             <button class="justify-end rounded-xl border-2 border-red-500 px-5 py-3 text-base mt-3 mb-3 font-medium text-red-500 transition duration-200 hover:bg-red-600/5 active:bg-red-700/5">
-                Go to Full description
+              <span data-text-en="Go to Full description" data-text-es="Ver descripción completa">Go to Full description</span>
             </button>
           </a>
         </div>
@@ -76,93 +98,107 @@ import TimeLineElement from "../components/cv/TimeLine.astro";
     </TimeLineElement>
 
     <TimeLineElement
-          title="Rackspace - Support Technician"
-          subtitle="From April 2024 to July 2024 at Rackspace, CDMX, México"
-      >
-      <div class="flex flex-wrap">
-        <p class="">
-          In this role, I worked as part of the frontline customer support team, handling incoming customer queries with dedication and thorough analysis. I identified and resolved issues by conducting in-depth investigations, ensuring I fully understood the nature of the problems, even when they were unfamiliar. My commitment to providing accurate and relevant information often led me to research extensively before offering solutions or escalating issues through the appropriate channels.
-          I also manage ticket queues effectively, ensuring that assignments are timely and directed to the appropriate technicians or teams. By coordinating tasks between departments through precise ticket routing, I minimize false alerts and significantly enhance the accuracy of our system monitoring. This proactive approach not only resolves customer issues efficiently but also strengthens overall operational reliability.
-        </p>
-        <a href="/blog/rackspace">
-          <button class="justify-end rounded-xl border-2 border-red-500 px-5 py-3 text-base mb-3 font-medium text-red-500 transition duration-200 hover:bg-red-600/5 active:bg-red-700/5">
-              Go to Full description  
-          </button>    
-        </a>
-      </div>       
-    </TimeLineElement>
-    
-    
-    <TimeLineElement
-    title="Intelite - Proposal Engineer"
-    subtitle="From June 2023 to March 2024 at Intelite, CDMX, México">
-      <div class="">
-        <p class="">
-          <p class="font-normal">•	IOT Solutions :</p>
-          <p class="py-1">•	Propose and program integrated controllers for smart homes and buildings (BMS).</p>
-          <p class="py-1">•	Ensure the integration and compatibility of proposed systems with existing and future infrastructures.</p>
-          <p class="py-1">•	Coordinate with suppliers and contractors to ensure that components and services meet project standards and requirements.</p>
-          <p class="py-1">•	Offer technical support and troubleshoot issues related to controllers, and systems.</p>
-        </p>
-        <a href="/blog/intelite">
-          <button class="justify-end rounded-xl border-2 border-red-500 px-5 py-3 text-base mb-3 font-medium text-red-500 transition duration-200 hover:bg-red-600/5 active:bg-red-700/5">
-              Go to Full description  
-          </button>    
-        </a>
-      </div>  
-    </TimeLineElement>
-    <TimeLineElement
-      title="Service Engineer - IOSA"
-      subtitle="From November 2022 to June 2023 at Ingenieria Operativa, CDMX, Mexico"
+      title="Rackspace - Support Technician"
+      titleEs="Rackspace - Técnico de Soporte"
+      subtitle="From April 2024 to July 2024 at Rackspace, CDMX, Mexico"
+      subtitleEs="De abril de 2024 a julio de 2024 en Rackspace, CDMX, México"
     >
       <div class="flex flex-wrap">
-        <p class="">
-          Responsible for preventive and corrective maintenance of X-ray machines, signal blockers, walk-through metal detector arches, and narcotics and explosives detection equipment across Mexico. For at least one year, I managed approximately 45 machines at Mexico City International Airport Terminal 1 and Terminal 2, reaching around 98% operability, supporting contract compliance, avoiding penalties, and maintaining a close technical relationship with ANAM.
-        </p>
-        <a href="/blog/iosa">
+        <p data-lang-panel="en">In this role, I worked as part of the frontline customer support team, handling incoming customer queries with dedication and thorough analysis. I identified and resolved issues through investigation, managed ticket queues, routed cases to the right teams, and helped improve operational reliability through clear coordination.</p>
+        <p data-lang-panel="es" hidden>En este rol trabajé como parte del equipo de soporte de primera línea, atendiendo consultas de clientes con análisis detallado. Identificaba y resolvía problemas mediante investigación, administraba colas de tickets, dirigía casos a los equipos correctos y ayudaba a mejorar la confiabilidad operativa mediante coordinación clara.</p>
+        <a href="/blog/rackspace">
           <button class="justify-end rounded-xl border-2 border-red-500 px-5 py-3 text-base mb-3 font-medium text-red-500 transition duration-200 hover:bg-red-600/5 active:bg-red-700/5">
-              Go to Full description  
-          </button>    
+            <span data-text-en="Go to Full description" data-text-es="Ver descripción completa">Go to Full description</span>
+          </button>
         </a>
       </div>
     </TimeLineElement>
+
     <TimeLineElement
-      title="ATAV - Programmer and Field Engineer"
-      subtitle="From February 2020 to November 2023 at Ambientes Tactiles, CDMX, Mexico"
+      title="Intelite - Proposal Engineer"
+      titleEs="Intelite - Ingeniero de Propuestas"
+      subtitle="From June 2023 to March 2024 at Intelite, CDMX, Mexico"
+      subtitleEs="De junio de 2023 a marzo de 2024 en Intelite, CDMX, México"
+    >
+      <div>
+        <div data-lang-panel="en">
+          <p class="font-normal">• IoT and BMS solutions.</p>
+          <p class="py-1">• Proposed and programmed integrated controllers for smart homes and buildings.</p>
+          <p class="py-1">• Ensured integration and compatibility of proposed systems with current and future infrastructure.</p>
+          <p class="py-1">• Coordinated with suppliers and contractors to meet project requirements.</p>
+          <p class="py-1">• Provided post-sales technical support and troubleshooting.</p>
+        </div>
+        <div data-lang-panel="es" hidden>
+          <p class="font-normal">• Soluciones IoT y BMS.</p>
+          <p class="py-1">• Propuesta y programación de controladores integrados para casas y edificios inteligentes.</p>
+          <p class="py-1">• Validación de integración y compatibilidad de sistemas propuestos con infraestructura actual y futura.</p>
+          <p class="py-1">• Coordinación con proveedores y contratistas para cumplir requerimientos del proyecto.</p>
+          <p class="py-1">• Soporte técnico postventa y troubleshooting.</p>
+        </div>
+        <a href="/blog/intelite">
+          <button class="justify-end rounded-xl border-2 border-red-500 px-5 py-3 text-base mb-3 font-medium text-red-500 transition duration-200 hover:bg-red-600/5 active:bg-red-700/5">
+            <span data-text-en="Go to Full description" data-text-es="Ver descripción completa">Go to Full description</span>
+          </button>
+        </a>
+      </div>
+    </TimeLineElement>
+
+    <TimeLineElement
+      title="IOSA - Service Engineer"
+      titleEs="IOSA - Ingeniero de Servicio"
+      subtitle="From November 2022 to June 2023 at Ingenieria Operativa, CDMX, Mexico"
+      subtitleEs="De noviembre de 2022 a junio de 2023 en Ingeniería Operativa, CDMX, México"
     >
       <div class="flex flex-wrap">
-        <p class="">
-          I worked as a programmer and field engineer for residential and commercial automation projects, mainly with Control4 and complementary systems such as Dahua, Lutron, lighting, audio, cameras, shades, and other integrated smart devices. Unlike my later proposal engineering role at Intelite, this position was focused on field implementation, commissioning, programming, troubleshooting, and direct customer support during project delivery.
-        </p>
+        <p data-lang-panel="en">Responsible for preventive and corrective maintenance of X-ray machines, signal blockers, walk-through metal detector arches, and narcotics and explosives detection equipment across Mexico. For at least one year, I managed approximately 45 machines at Mexico City International Airport Terminal 1 and Terminal 2, reaching around 98% operability, supporting contract compliance, avoiding penalties, and maintaining a close technical relationship with ANAM.</p>
+        <p data-lang-panel="es" hidden>Responsable del mantenimiento preventivo y correctivo de máquinas de rayos X, bloqueadores de señal, arcos detectores de metales y equipos de detección de narcóticos y explosivos en distintas partes de México. Durante al menos un año administré aproximadamente 45 máquinas en el AICM Terminal 1 y Terminal 2, alcanzando cerca de 98% de operabilidad, apoyando el cumplimiento contractual, evitando multas y manteniendo una relación técnica cercana con ANAM.</p>
+        <a href="/blog/iosa">
+          <button class="justify-end rounded-xl border-2 border-red-500 px-5 py-3 text-base mb-3 font-medium text-red-500 transition duration-200 hover:bg-red-600/5 active:bg-red-700/5">
+            <span data-text-en="Go to Full description" data-text-es="Ver descripción completa">Go to Full description</span>
+          </button>
+        </a>
+      </div>
+    </TimeLineElement>
+
+    <TimeLineElement
+      title="ATAV - Programmer and Field Engineer"
+      titleEs="ATAV - Programador e Ingeniero de Campo"
+      subtitle="From February 2020 to November 2023 at Ambientes Tactiles, CDMX, Mexico"
+      subtitleEs="De febrero de 2020 a noviembre de 2023 en Ambientes Táctiles, CDMX, México"
+    >
+      <div class="flex flex-wrap">
+        <p data-lang-panel="en">I worked as a programmer and field engineer for residential and commercial automation projects, mainly with Control4 and complementary systems such as Dahua, Lutron, lighting, audio, cameras, shades, and other integrated smart devices. Unlike my later proposal engineering role at Intelite, this position was focused on field implementation, commissioning, programming, troubleshooting, and direct customer support during project delivery.</p>
+        <p data-lang-panel="es" hidden>Trabajé como programador e ingeniero de campo para proyectos de automatización residencial y comercial, principalmente con Control4 y sistemas complementarios como Dahua, Lutron, iluminación, audio, cámaras, persianas y otros dispositivos inteligentes integrados. A diferencia de mi rol posterior en Intelite, esta posición estaba enfocada en implementación en campo, commissioning, programación, troubleshooting y soporte directo al cliente durante la entrega del proyecto.</p>
         <a href="/blog/atav">
           <button class="justify-end rounded-xl border-2 border-red-500 px-5 py-3 text-base mb-3 font-medium text-red-500 transition duration-200 hover:bg-red-600/5 active:bg-red-700/5">
-              Go to Full description  
-          </button>    
+            <span data-text-en="Go to Full description" data-text-es="Ver descripción completa">Go to Full description</span>
+          </button>
         </a>
-      </div> 
-  </TimeLineElement>
+      </div>
+    </TimeLineElement>
   </div>
+
   <div class="mb-5">
-    <div class="text-3xl w-full font-bold">Certifications</div>
+    <div class="text-3xl w-full font-bold" data-text-en="Certifications" data-text-es="Certificaciones">Certifications</div>
   </div>
 
   <ul class="list-disc mx-6 mb-10 grid md:grid-cols-2 gap-2 grid-cols-1">
     <li>
-      <a href="#" target="_blank"> Fullstack Web Development</a>
+      <a href="#" target="_blank">Fullstack Web Development</a>
       <div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="7fa21e80-c0e7-407f-953f-e0e910557f2c" data-share-badge-host="https://www.credly.com"></div><script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
     </li>
     <li>
-      <a href="/DiplomadoCanvas.jpeg" target="_blank"> Canvas Tools
+      <a href="/DiplomadoCanvas.jpeg" target="_blank">Canvas Tools
         <img src="/DiplomadoCanvas.jpeg" alt="" class="flex justify-center size-60">
       </a>
     </li>
     <li>
-      <a href="/LiderazgoLaboral.jpeg" target="_blank"> Liderazgo Laboral
+      <a href="/LiderazgoLaboral.jpeg" target="_blank">Liderazgo Laboral
         <img src="/LiderazgoLaboral.jpeg" alt="" class="flex justify-center size-60">
       </a>
     </li>
     <li>
-      <a href="/KardexCursoLaboral.jpeg" target="_blank"> Kardex Liderazgo Laboral
+      <a href="/KardexCursoLaboral.jpeg" target="_blank">Kardex Liderazgo Laboral
         <img src="/KardexCursoLaboral.jpeg" alt="" class="flex justify-center size-60">
       </a>
     </li>
@@ -178,8 +214,8 @@ import TimeLineElement from "../components/cv/TimeLine.astro";
     <li>Office 365</li>
     <li>LabView</li>
     <li>Matlab</li>
-    <li>TiaPortal</li>
-    <li>RSlogix</li>
+    <li>TIA Portal</li>
+    <li>RSLogix</li>
     <li>JavaScript</li>
     <li>SQL</li>
     <li>NoSQL MongoDB</li>

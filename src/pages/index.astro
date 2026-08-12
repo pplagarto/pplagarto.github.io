@@ -15,37 +15,56 @@ const last_posts = posts.slice(0, );
 
 <BaseLayout sideBarActiveItemID="home">
   <div class="pb-12 mt-5 ">
-    <div class="text-xl py-1">Hi, I'm Gerardo</div>
+    <div class="text-xl py-1" data-i18n="intro">Hi, I'm Gerardo</div>
     <div class="text-5xl font-bold">I'm Jose Gerardo Lagunes Garcia</div>
-    <div class="text-3xl py-3 font-bold">Cloud Support Engineer | Control and Automation Engineer</div>
+    <div class="text-3xl py-3 font-bold" data-i18n="role">Cloud Support Engineer | Control and Automation Engineer</div>
     <div class="py-2">
-      <text class="text-lg">
+      <p class="text-lg" data-i18n="summary">
         I am a Control and Automation Engineer currently focused on cloud infrastructure, networking, and technical support for enterprise environments.
         My work combines structured troubleshooting, customer communication, and continuous learning across cloud services, databases, Linux, and networking.
-      </text>
+      </p>
     </div>
-    <div class="flex justify-around">
-      <div class="mt-8">
-        <a class="btn" href="https://www.linkedin.com/in/gerardolagunes/" target="_blank"> Let's connect!</a>
+    <div class="mt-6 grid gap-3 sm:grid-cols-3">
+      <div class="rounded-lg border border-base-300 bg-base-200 px-4 py-3 text-center">
+        <div class="text-sm uppercase tracking-wide opacity-70" data-i18n="currentFocus">Current Focus</div>
+        <div class="text-lg font-bold">OCI Networking</div>
       </div>
-      <div class="mt-8">
-        <a class="btn" href="/cv" id="cv"> Virtual CV</a>
+      <div class="rounded-lg border border-base-300 bg-base-200 px-4 py-3 text-center">
+        <div class="text-sm uppercase tracking-wide opacity-70" data-i18n="strength">Strength</div>
+        <div class="text-lg font-bold" data-i18n="troubleshooting">Troubleshooting</div>
       </div>
+      <div class="rounded-lg border border-base-300 bg-base-200 px-4 py-3 text-center">
+        <div class="text-sm uppercase tracking-wide opacity-70" data-i18n="background">Background</div>
+        <div class="text-lg font-bold" data-i18n="automation">Automation</div>
+      </div>
+    </div>
+    <div class="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
+      <a class="btn btn-primary btn-lg min-w-[14rem] shadow-lg shadow-primary/20" href="/CV_JGLG_JULIO_2024_ENG3.pdf" download="CV_JGLG_JULIO_2024_ENG3.pdf">
+        <span data-i18n="downloadResume">Download Resume</span>
+      </a>
+      <a class="btn btn-outline btn-lg min-w-[14rem]" href="/cv" id="cv">
+        <span data-i18n="viewTimeline">View Timeline</span>
+      </a>
+      <a class="btn btn-ghost btn-lg min-w-[14rem]" href="https://www.linkedin.com/in/gerardolagunes/" target="_blank">
+        LinkedIn
+      </a>
     </div>  
   </div>
 
   <div>
-    <div class="text-3xl w-full font-bold mb-5 mt-10">Professional Experience</div>
+    <div class="text-3xl w-full font-bold mb-5 mt-10" data-i18n="professionalExperience">Professional Experience</div>
   </div>
 
    
   {
     last_posts.map((post) => (
       <>
-        <HorizontalCard
-          title={post.data.title}
+          <HorizontalCard
+          title={post.data.displayTitle || post.data.title}
+          titleEs={post.data.displayTitleEs}
           img={post.data.heroImage}
           desc={post.data.description}
+          descEs={post.data.descriptionEs}
           url={"/blog/" + createSlug(post.data.title, post.slug)}
           target="_self"
           badge={post.data.badge}

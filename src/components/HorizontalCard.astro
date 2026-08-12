@@ -1,7 +1,18 @@
 ---
-const { title, img, desc, url, badge, period, tags, target = "_blank" } = Astro.props;
+const { title, titleEs, img, desc, descEs, url, badge, period, tags, target = "_blank" } = Astro.props;
 import { Image } from "astro:assets";
 const tag_url = url.split("/").slice(0, -1).join("/") + "/tag";
+const tagLabelsEs = {
+  "Home Automation": "Automatización Residencial",
+  "Field Engineering": "Ingeniería de Campo",
+  "Maintenance": "Mantenimiento",
+  "Metal Detection": "Detección de Metales",
+  "Security Equipment": "Equipos de Seguridad",
+  "Networking": "Redes",
+  "Troubleshooting": "Diagnóstico",
+  "Windows and Linux": "Windows y Linux",
+  "Service": "Servicio",
+};
 ---
 
 <div
@@ -23,18 +34,18 @@ class="rounded-lg bg-base-100 hover:shadow-xl transition ease-in-out hover:scale
       }
       <div class="grow w-full">
         <h1 class="text-xl font-bold">
-          {title}
-          {badge && <div class="badge badge-secondary mx-2">{badge}</div>}
+          <span data-text-en={title} data-text-es={titleEs || title}>{title}</span>
+          {badge && <div class="badge badge-secondary mx-2" data-i18n={badge === "Current" ? "current" : undefined}>{badge}</div>}
         </h1>
         <p class="py-1 text-1xl">
-          {desc}
+          <span data-text-en={desc} data-text-es={descEs || desc}>{desc}</span>
         </p>
         <div class="card-actions justify-end">
           {
             tags &&
               tags.map((tag) => (
                 <a href={`${tag_url}/${tag}`} class="badge badge-outline">
-                  {tag}
+                  <span data-text-en={tag} data-text-es={tagLabelsEs[tag] || tag}>{tag}</span>
                 </a>
               ))
           }

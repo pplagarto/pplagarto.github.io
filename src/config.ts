@@ -4,4 +4,4 @@
 export const SITE_TITLE = 'Gerardo Lagunes';
 export const SITE_DESCRIPTION = 'Este es una pagina donde podran encontrar la informacion detallada de mi carrera.';
 export const GENERATE_SLUG_FROM_TITLE = true
-export const TRANSITION_API = true
+export const TRANSITION_API = false

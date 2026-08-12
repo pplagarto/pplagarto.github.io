@@ -4,20 +4,23 @@ const activeClass = "bg-base-300"; // For primary color replace with `active` cl
 ---
 
 <ul class="menu grow shrink menu-md overflow-y-auto">
-    <li><a class="py-3 text-base" id="home" href="/">Home</a></li>
-    <li><a class="py-3 text-base" id="cv" href="/cv">CV</a></li>
-    <li><a class="py-3 text-base" id="blog" href="/blog/">Blog</a></li>
+    <li><a class="py-3 text-base" id="home" href="/" data-i18n="home">Home</a></li>
+    <li><a class="py-3 text-base" id="cv" href="/cv" data-i18n="timeline">Experience Timeline</a></li>
+    <li><a class="py-3 text-base" href="/CV_JGLG_JULIO_2024_ENG3.pdf" download="CV_JGLG_JULIO_2024_ENG3.pdf" data-i18n="downloadResume">Download Resume</a></li>
+    <li><a class="py-3 text-base" id="blog" href="/blog/" data-i18n="blog">Blog</a></li>
+    <li><a class="py-3 text-base" href="https://www.linkedin.com/in/gerardolagunes/" target="_blank" data-i18n="linkedin">LinkedIn</a></li>
     
     <li>
         <a
             class="py-3 text-base"
             href="mailto:pepe.lag.gar@gmail.com"
             target="_blank"
-            referrerpolicy="no-referrer-when-downgrade">Email Me</a
+            referrerpolicy="no-referrer-when-downgrade"
+            data-i18n="email">Email Me</a
         >
     </li>
     <li><a class="py-3 text-base" id="Whatsapp" href="https://api.whatsapp.com/send?phone=525544767026&text=Hola%20,vengo%20de%20tu
-    %20blog.%20" target="_blank" >WhatsApp Me</a></li>
+    %20blog.%20" target="_blank" data-i18n="whatsapp">WhatsApp Me</a></li>
 </ul>
 
 <script define:vars={{ sideBarActiveItemID: sideBarActiveItemID, activeClass: activeClass }}>

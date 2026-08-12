@@ -3,6 +3,7 @@ import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import SideBar from "../components/SideBar.astro";
+import PreferenceControls from "../components/PreferenceControls.astro";
 import { ViewTransitions } from "astro:transitions";
 
 import { SITE_TITLE, SITE_DESCRIPTION, TRANSITION_API } from "../config";
@@ -20,10 +21,24 @@ const {
 <!doctype html>
 <html lang="en" data-theme="lofi">
   <head>
+    <script is:inline>
+      (() => {
+        try {
+          const savedLanguage = localStorage.getItem("portfolio-language") || "en";
+          const savedTheme = localStorage.getItem("portfolio-theme") || "lofi";
+          document.documentElement.lang = savedLanguage;
+          document.documentElement.setAttribute("data-theme", savedTheme);
+        } catch (_) {
+          document.documentElement.lang = "en";
+          document.documentElement.setAttribute("data-theme", "lofi");
+        }
+      })();
+    </script>
     <BaseHead title={title} description={description} image={image} , ogType={ogType} />
     {TRANSITION_API && <ViewTransitions />}
   </head>
   <body>
+    <PreferenceControls />
     <div class="bg-base-100 drawer lg:drawer-open">
       <input id="my-drawer" type="checkbox" class="drawer-toggle" />
       <div class="drawer-content bg-base-100">
@@ -37,5 +52,143 @@ const {
       </div>
       {includeSidebar && <SideBar sideBarActiveItemID={sideBarActiveItemID} />}
     </div>
+    <script is:inline>
+      (() => {
+      const translations = {
+        en: {
+          home: "Home",
+          timeline: "Experience Timeline",
+          downloadResume: "Download Resume",
+          blog: "Blog",
+          linkedin: "LinkedIn",
+          email: "Email Me",
+          whatsapp: "WhatsApp Me",
+          intro: "Hi, I'm Gerardo",
+          role: "Cloud Support Engineer | Control and Automation Engineer",
+          summary:
+            "I am a Control and Automation Engineer currently focused on cloud infrastructure, networking, and technical support for enterprise environments. My work combines structured troubleshooting, customer communication, and continuous learning across cloud services, databases, Linux, and networking.",
+          currentFocus: "Current Focus",
+          strength: "Strength",
+          background: "Background",
+          troubleshooting: "Troubleshooting",
+          automation: "Automation",
+          viewTimeline: "View Timeline",
+          professionalExperience: "Professional Experience",
+          current: "Current",
+          light: "Light",
+          night: "Night",
+          sorry: "Sorry!",
+          noPosts: "There are no blog posts to show at the moment. Check back later!",
+          recentPosts: "Recent posts",
+          olderPosts: "Older posts",
+          notFound: "The page you're looking for couldn't be found.",
+          developedBy: "Developed by",
+          using: "using",
+        },
+        es: {
+          home: "Inicio",
+          timeline: "Trayectoria Profesional",
+          downloadResume: "Descargar CV",
+          blog: "Blog",
+          linkedin: "LinkedIn",
+          email: "Correo",
+          whatsapp: "WhatsApp",
+          intro: "Hola, soy Gerardo",
+          role: "Cloud Support Engineer | Ingeniero en Control y Automatización",
+          summary:
+            "Soy Ingeniero en Control y Automatización, actualmente enfocado en infraestructura cloud, networking y soporte técnico para entornos empresariales. Mi trabajo combina troubleshooting estructurado, comunicación con clientes y aprendizaje continuo en servicios cloud, bases de datos, Linux y redes.",
+          currentFocus: "Enfoque Actual",
+          strength: "Fortaleza",
+          background: "Base Profesional",
+          troubleshooting: "Troubleshooting",
+          automation: "Automatización",
+          viewTimeline: "Ver Trayectoria",
+          professionalExperience: "Experiencia Profesional",
+          current: "Actual",
+          light: "Claro",
+          night: "Noche",
+          sorry: "Lo siento.",
+          noPosts: "No hay publicaciones para mostrar por el momento. Vuelve más tarde.",
+          recentPosts: "Publicaciones recientes",
+          olderPosts: "Publicaciones anteriores",
+          notFound: "No se pudo encontrar la página que estás buscando.",
+          developedBy: "Desarrollado por",
+          using: "usando",
+        },
+      };
+
+      const readPreference = (key, fallback) => {
+        try {
+          return localStorage.getItem(key) || fallback;
+        } catch (_) {
+          return fallback;
+        }
+      };
+
+      const writePreference = (key, value) => {
+        try {
+          localStorage.setItem(key, value);
+        } catch (_) {}
+      };
+
+      const applyLanguage = (lang, persist = true) => {
+        const dictionary = translations[lang] || translations.en;
+        document.documentElement.lang = lang;
+        document.querySelectorAll("[data-i18n]").forEach((element) => {
+          const key = element.getAttribute("data-i18n");
+          if (dictionary[key]) element.textContent = dictionary[key];
+        });
+        document.querySelectorAll("[data-text-en]").forEach((element) => {
+          const text = element.getAttribute(lang === "es" ? "data-text-es" : "data-text-en");
+          if (text) element.textContent = text;
+        });
+        document.querySelectorAll("[data-lang-panel]").forEach((element) => {
+          element.hidden = element.getAttribute("data-lang-panel") !== lang;
+        });
+        document.querySelectorAll("[data-lang-option]").forEach((button) => {
+          button.classList.toggle("btn-active", button.getAttribute("data-lang-option") === lang);
+        });
+        if (persist) writePreference("portfolio-language", lang);
+      };
+
+      const applyTheme = (theme, persist = true) => {
+        document.documentElement.setAttribute("data-theme", theme);
+        document.querySelectorAll("[data-theme-option]").forEach((button) => {
+          button.classList.toggle("btn-active", button.getAttribute("data-theme-option") === theme);
+        });
+        if (persist) writePreference("portfolio-theme", theme);
+      };
+
+      const syncPreferences = () => {
+        applyLanguage(readPreference("portfolio-language", "en"), false);
+        applyTheme(readPreference("portfolio-theme", "lofi"), false);
+      };
+
+      if (!window.portfolioPreferencesInitialized) {
+        window.portfolioPreferencesInitialized = true;
+
+        document.addEventListener("click", (event) => {
+          const target = event.target instanceof Element ? event.target : event.target?.parentElement;
+          if (!target) return;
+
+          const langButton = target.closest("[data-lang-option]");
+          if (langButton) {
+            applyLanguage(langButton.getAttribute("data-lang-option"));
+            return;
+          }
+
+          const themeButton = target.closest("[data-theme-option]");
+          if (themeButton) {
+            applyTheme(themeButton.getAttribute("data-theme-option"));
+          }
+        });
+
+        document.addEventListener("astro:page-load", syncPreferences);
+        document.addEventListener("DOMContentLoaded", syncPreferences);
+      }
+
+      syncPreferences();
+      })();
+    </script>
   </body>
 </html>
