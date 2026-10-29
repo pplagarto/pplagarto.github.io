@@ -1,3 +1,15 @@
 .time-line-container>div:last-child .education__time>.education__line {
     display: none;
 }
+
+.preference-controls .btn-active {
+    @apply border-primary bg-primary text-primary-content;
+}
+
+::selection {
+    @apply bg-secondary text-secondary-content;
+}
+
+.prose {
+    --tw-prose-links: oklch(var(--p));
+}

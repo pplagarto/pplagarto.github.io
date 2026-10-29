@@ -39,7 +39,7 @@ tags: ["Service","Maintenance","X-Ray","Metal Detection","Security Equipment"]
 
 <div class="flex justify-around">
   <a href="https://provetecnia.com/rayos" target="_blank">
-    <button class="rounded-xl border-2 border-red-500 px-5 py-3 text-base mb-3 font-medium text-red-500 transition duration-200 hover:bg-red-600/5 active:bg-red-700/5">
+    <button class="rounded-xl border-2 border-primary px-5 py-3 text-base mb-3 font-medium text-primary transition duration-200 hover:bg-primary/5 active:bg-primary/10">
       <span data-text-en="Provetecnia Equipment Reference" data-text-es="Referencia de equipos Provetecnia">Provetecnia Equipment Reference</span>
     </button>
   </a>

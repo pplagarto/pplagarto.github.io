@@ -43,12 +43,12 @@ tags: ["IoT","Cloud","AWS","DNS","Windows and Linux","GCP","Azure","SSL"]
 
 <div class="flex justify-around">
   <a href="https://www.rackspace.com/es-mx" target="_blank">
-    <button class="rounded-xl border-2 border-red-500 px-5 py-3 text-base mb-3 font-medium text-red-500 transition duration-200 hover:bg-red-600/5 active:bg-red-700/5">
+    <button class="rounded-xl border-2 border-primary px-5 py-3 text-base mb-3 font-medium text-primary transition duration-200 hover:bg-primary/5 active:bg-primary/10">
       <span data-text-en="Rackspace Page" data-text-es="Página de Rackspace">Rackspace Page</span>
     </button>
   </a>
   <a href="/recom_rax.jpeg" target="_blank">
-    <button class="rounded-xl border-2 border-red-500 px-5 py-3 text-base mb-3 font-medium text-red-500 transition duration-200 hover:bg-red-600/5 active:bg-red-700/5">
+    <button class="rounded-xl border-2 border-primary px-5 py-3 text-base mb-3 font-medium text-primary transition duration-200 hover:bg-primary/5 active:bg-primary/10">
       <span data-text-en="Recommendation from Rackspace" data-text-es="Recomendación de Rackspace">Recommendation from Rackspace</span>
     </button>
   </a>

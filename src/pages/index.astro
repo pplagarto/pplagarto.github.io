@@ -1,7 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import HorizontalCard from "../components/HorizontalCard.astro";
-import ProjectCard from "../components/ProjectCard.astro";
 import { getCollection } from "astro:content";
 import createSlug from "../lib/createSlug";
 
@@ -13,62 +12,12 @@ const posts = (await getCollection("blog")).sort((a, b) => {
 
 const last_posts = posts.slice(0, );
 
-const projects = [
-  {
-    name: "GuitarApp",
-    mark: "GA",
-    categoryEn: "Music · PWA",
-    categoryEs: "Música · PWA",
-    descriptionEn: "A guitar companion for saving and reviewing tablature and chord sheets, with a microphone tuner, alternate tunings, favorites, and offline access.",
-    descriptionEs: "Una app para guardar y revisar tablaturas y letras con acordes, con afinador por micrófono, afinaciones alternativas, favoritos y acceso sin conexión.",
-    technologies: ["JavaScript", "Web Audio", "PWA"],
-    liveUrl: "https://seis-cuerdas.pepe-lag-gar-3da.workers.dev/",
-    repoUrl: "https://github.com/pplagarto/guitarpepe",
-    accent: "bg-primary text-primary-content",
-  },
-  {
-    name: "CasaClara",
-    mark: "CC",
-    categoryEn: "Shared finances",
-    categoryEs: "Finanzas compartidas",
-    descriptionEn: "A private app for tracking shared household expenses, reimbursements, receipts, and balances with individual accounts and a complete history.",
-    descriptionEs: "Una app privada para registrar gastos del hogar, reembolsos, comprobantes y saldos, con cuentas individuales e historial completo.",
-    technologies: ["JavaScript", "Cloudflare Workers", "D1"],
-    liveUrl: "https://casa-clara-jose-daniela.pepe-lag-gar-3da.workers.dev/",
-    repoUrl: "https://github.com/pplagarto/casaclara",
-    privateAccess: true,
-    accent: "bg-secondary text-secondary-content",
-  },
-  {
-    name: "Recetary",
-    mark: "RE",
-    categoryEn: "Food · Planning",
-    categoryEs: "Cocina · Planeación",
-    descriptionEn: "A recipe collection with ingredient search, adjustable quantities, and a shopping list that combines ingredients across selected recipes.",
-    descriptionEs: "Un recetario con búsqueda por ingrediente, cantidades ajustables y una lista de compras que reúne ingredientes de varias recetas.",
-    technologies: ["JavaScript", "LocalStorage", "Cloudflare Workers"],
-    liveUrl: "https://recetario-de-pepe.pepe-lag-gar-3da.workers.dev/",
-    repoUrl: "https://github.com/pplagarto/recetario",
-    accent: "bg-accent text-accent-content",
-  },
-  {
-    name: "Al Grano ERP",
-    mark: "AG",
-    categoryEn: "Retail · ERP",
-    categoryEs: "Comercio · ERP",
-    descriptionEn: "An inventory and point-of-sale system for a retail shop, covering product lots, purchases, cash register shifts, returns, and operational reports.",
-    descriptionEs: "Un sistema de inventario y punto de venta para una tienda, con lotes, compras, turnos de caja, devoluciones y reportes operativos.",
-    technologies: ["Cloudflare Workers", "Supabase", "PostgreSQL"],
-    liveUrl: "https://algrano-erp.pepe-lag-gar-3da.workers.dev/",
-    repoUrl: "https://github.com/pplagarto/algrano-ERP",
-    privateAccess: true,
-    privateRepo: true,
-    accent: "bg-neutral text-neutral-content",
-  },
-];
 ---
 
 <BaseLayout sideBarActiveItemID="home">
+  <script is:inline>
+    if (window.location.hash === "#projects") window.location.replace("/projects");
+  </script>
   <div class="pb-12 mt-5 ">
     <div class="text-xl py-1" data-i18n="intro">Hi, I'm Gerardo</div>
     <div class="text-5xl font-bold">I'm Jose Gerardo Lagunes Garcia</div>
@@ -128,13 +77,3 @@ const projects = [
       </>
     ))
   }
-
-  <section id="projects" class="scroll-mt-20 pt-10" aria-labelledby="projects-heading">
-    <div class="mb-6">
-      <h2 id="projects-heading" class="text-3xl font-bold" data-i18n="projects">Projects</h2>
-      <p class="mt-2 opacity-75" data-i18n="projectsIntro">Apps I've built to solve practical problems, from everyday tools to business operations.</p>
-    </div>
-    <div class="grid gap-6 md:grid-cols-2">
-      {projects.map((project) => <ProjectCard {...project} />)}
-    </div>
-  </section>

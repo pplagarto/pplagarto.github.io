@@ -2,6 +2,7 @@
 import SideBarFooter from "./SideBarFooter.astro";
 import { Image } from "astro:assets";
 import SideBarMenu from "./SideBarMenu.astro";
+import profilePhoto from "../assets/foto-perfil-editorial.png";
 const { sideBarActiveItemID } = Astro.props;
 ---
 
@@ -12,12 +13,11 @@ const { sideBarActiveItemID } = Astro.props;
       <a href="/" class="block">
         <div class="relative overflow-hidden">
           <Image
-            class="h-[18rem] w-full object-cover object-top grayscale"
+            class="h-[18rem] w-full object-cover object-top"
             format="webp"
             width={420}
-            height={520}
-            src="/fotoJGLG.jpeg"
-            alt="Profile image"
+            src={profilePhoto}
+            alt="Gerardo Lagunes"
           />
           <div class="pointer-events-none absolute -left-20 top-10 h-16 w-[150%] -rotate-[30deg] bg-gradient-to-r from-primary/45 via-base-100/20 to-transparent mix-blend-overlay"></div>
           <div class="pointer-events-none absolute -right-16 bottom-12 h-10 w-[110%] -rotate-[30deg] bg-neutral/20 mix-blend-multiply"></div>

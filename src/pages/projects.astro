@@ -1,0 +1,81 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+
+const projects = [
+  {
+    slug: "guitarapp",
+    name: "GuitarApp",
+    logo: "guitar",
+    categoryEn: "Music · PWA",
+    categoryEs: "Música · PWA",
+    descriptionEn: "A guitar companion for saving and reviewing tablature and chord sheets, with a microphone tuner, alternate tunings, favorites, and offline access.",
+    descriptionEs: "Una app para guardar y revisar tablaturas y letras con acordes, con afinador por micrófono, afinaciones alternativas, favoritos y acceso sin conexión.",
+    technologies: ["JavaScript", "Web Audio", "PWA"],
+    preview: "/projects/guitar-preview.png",
+    previewLabelEn: "Live app preview",
+    previewLabelEs: "Vista de la app publicada",
+    liveUrl: "https://seis-cuerdas.pepe-lag-gar-3da.workers.dev/",
+    repoUrl: "https://github.com/pplagarto/guitarpepe",
+  },
+  {
+    slug: "casaclara",
+    name: "CasaClara",
+    logo: "casa",
+    categoryEn: "Shared finances",
+    categoryEs: "Finanzas compartidas",
+    descriptionEn: "A private app for tracking shared household expenses, reimbursements, receipts, and balances with individual accounts and a complete history.",
+    descriptionEs: "Una app privada para registrar gastos del hogar, reembolsos, comprobantes y saldos, con cuentas individuales e historial completo.",
+    technologies: ["JavaScript", "Cloudflare Workers", "D1"],
+    preview: "/projects/casa-preview.svg",
+    previewLabelEn: "Illustrative preview · no personal data",
+    previewLabelEs: "Vista ilustrativa · sin datos personales",
+    liveUrl: "https://casa-clara-jose-daniela.pepe-lag-gar-3da.workers.dev/",
+    repoUrl: "https://github.com/pplagarto/casaclara",
+    privateAccess: true,
+  },
+  {
+    slug: "recetary",
+    name: "Recetary",
+    logo: "recetary",
+    categoryEn: "Food · Planning",
+    categoryEs: "Cocina · Planeación",
+    descriptionEn: "A recipe collection with ingredient search, adjustable quantities, and a shopping list that combines ingredients across selected recipes.",
+    descriptionEs: "Un recetario con búsqueda por ingrediente, cantidades ajustables y una lista de compras que reúne ingredientes de varias recetas.",
+    technologies: ["JavaScript", "LocalStorage", "Cloudflare Workers"],
+    preview: "/projects/recetary-preview.png",
+    previewLabelEn: "Live app preview",
+    previewLabelEs: "Vista de la app publicada",
+    liveUrl: "https://recetario-de-pepe.pepe-lag-gar-3da.workers.dev/",
+    repoUrl: "https://github.com/pplagarto/recetario",
+  },
+  {
+    slug: "algrano-erp",
+    name: "Al Grano ERP",
+    logo: "algrano",
+    categoryEn: "Retail · ERP",
+    categoryEs: "Comercio · ERP",
+    descriptionEn: "An inventory and point-of-sale system for a retail shop, covering product lots, purchases, cash register shifts, returns, and operational reports.",
+    descriptionEs: "Un sistema de inventario y punto de venta para una tienda, con lotes, compras, turnos de caja, devoluciones y reportes operativos.",
+    technologies: ["Cloudflare Workers", "Supabase", "PostgreSQL"],
+    preview: "/projects/algrano-preview.jpg",
+    previewLabelEn: "Demo preview · sample data",
+    previewLabelEs: "Vista de demostración · datos de ejemplo",
+    liveUrl: "https://algrano-erp.pepe-lag-gar-3da.workers.dev/",
+    repoUrl: "https://github.com/pplagarto/algrano-ERP",
+    privateAccess: true,
+    privateRepo: true,
+  },
+] as const;
+---
+
+<BaseLayout title="Projects" sideBarActiveItemID="projects">
+  <header class="mb-10 mt-5">
+    <h1 class="text-4xl font-bold" data-i18n="projects">Projects</h1>
+    <p class="mt-3 max-w-prose text-lg opacity-75" data-i18n="projectsIntro">Apps I've built to solve practical problems, from everyday tools to business operations.</p>
+    <p class="mt-3 text-sm opacity-60" data-i18n="logoConceptsNote">Each project includes two logo concepts to review before choosing a final design.</p>
+  </header>
+  <div class="space-y-10">
+    {projects.map((project) => <ProjectCard {...project} />)}
+  </div>
+</BaseLayout>
